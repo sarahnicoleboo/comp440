@@ -49,7 +49,7 @@
 	        $dbuser = "comp440";
 		$dbpass = "pass1234";
 
-		$db = mysqli_connect("localhost", $dbuser, $dbpass, "refbookdb");
+		$db = mysqli_connect("localhost", $dbuser, $dbpass, "comp440project");
 
 		if ( ! $db ) // connection failed
 		{
