@@ -1,111 +1,138 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Database Design</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+      $(document).ready(function(){
+        $(".signup-form").hide();
+        $(".signup").css("background","none");
 
-<html>
-	
-	<head><meta charset="utf-8">
-	    <title>COMP 440 Project</title>
-	
-	    <script>
+        $(".login").click(function(){
+          $(".signup-form").hide();
+          $(".login-form").show();
+          $(".signup").css("background","none");
+          $(".login").css("background","#fff");
+        });
 
-	    //invoked when the button labeled Register is clicked
-	    //checks to make sure password and confirmed passwords match
-	    function regButtonClicked()
-	    {
-	        var passContents = password.value;
-	        var cPassContents = cpassword.value;
-	        if (passContents === cPassContents)
-	        {
-	            //do nothing
-	        }
-	        else
-	        {
-	            passwordCheck.innerHTML = "password entries should match";
-	        }
-	    }
+        $(".signup").click(function(){
+          $(".signup-form").show();
+          $(".login-form").hide();
+          $(".signup").css("background","#fff");
+          $(".login").css("background","none");
+        });
 
-	    //init function
-	    function init()
-	    {
-	        //variables
-	        username = document.getElementById("username");
-	        password = document.getElementById("password");
-	        cpassword = document.getElementById("cpassword");
-	        email = document.getElementById("email");
+        $(".btn").click(function(){
+          $(".input").val("");
+        });
+      });
+        function regButtonClicked()
+        {
+          var passContents = password.value;
+          var cPassContents = cpassword.value;
+          if (passContents === cPassContents)
+          {
+              //do nothing
+          }
+          else
+          {
+              passwordCheck.innerHTML = "password entries should match";
+          }
+        }
+        //init function
+        function init()
+        {
+          //variables
+          username = document.getElementById("username");
+          password = document.getElementById("password");
+          cpassword = document.getElementById("cpassword");
+          email = document.getElementById("email");
 
-	        //buttons
-	        regButton = document.getElementById("regButton");
+          //buttons
+          regButton = document.getElementById("regButton");
 
-	        //event listeners
-	        regButton.addEventListener("click", regButtonClicked);
-	    }
-	
-	    window.addEventListener("load", init);
-	    </script>
-	</head>
-	
-	<body>
-	    <p>COMP 440 Project Phase 1</p>
-	    <?php
-	        $dbuser = "comp440";
-		$dbpass = "pass1234";
+          //event listeners
+          regButton.addEventListener("click", regButtonClicked);
+        }
+  
+        window.addEventListener("load", init);
+        
+      
+    </script>
+  </head>
+  <body>
+  <div class="wrapper">
+    <div class="header">
+      <label class="header-title">Database Design</label>
+      <br />
+      <label class="header-sub">By: Sarah & Ale</label>
+    </div>
+    <?php
+    
+    $dbuser = "comp440";
+    $dbpass = "pass1234";
 
-		$db = mysqli_connect("localhost", $dbuser, $dbpass, "comp440project");
+    $db = mysqli_connect("127.0.0.1", $dbuser, $dbpass, "comp440project");
 
-		if ( ! $db ) // connection failed
-		{
-	            print "<p>Could not connect to database</p>";
-	            print ( mysqli_connect_error() );
-		    print "</body></html>";
-		    mysqli_close($db);
-		    die();	// go no further than this line!
-		}
-		else
-		{
-		    print "<p>Connection succeeded</p>";
-		    //	var_dump($db);
-	            error_log("Hi I am an error and db username is " . $dbuser . "\r\n");			
-	    	}
+    if ( ! $db ) // connection failed
+    {
+        print "<p>Could not connect to database</p>";
+        print ( mysqli_connect_error() );
+        print "</body></html>";
+        mysqli_close($db);
+        die();  // go no further than this line!
+    }
+    else
+    {
+        print "<p>Connection succeeded</p>";
+        //  var_dump($db);
+              error_log("Hi I am an error and db username is " . $dbuser . "\r\n");     
+        }
 
-	        //here is where i need to get the input from html and put it into the database.
-	    ?>
+          //here is where i need to get the input from html and put it into the database.
+    ?>
 
-	    <form method="get" action='#'>
-	        <label> Enter username:
-		    <input type="text" id="username">
-		</label>
-		<!- can add div later to insert duplicate username error ->
-		<br /><br />
+    <div class="container">
+      
+      <div class="login">Log In</div>
+      <div class="signup">Sign Up</div>
+      
+       <form class="signup-form" method="post" action='#'>
+          <label class="input-label">Enter an email address:</label>
+          <input type="text" id="email" placeholder="Email Address" class="input"><br />
 
-		<label>Enter password:
-		    <input type="password" id="password">
-		</label>
-		<br /><br />
+          <label class="input-label">Enter your first name:</label>
+          <input type="text" id="firstName" placeholder="First Name" class="input"><br />
 
-		<label>Confirm password:
-		    <input type="password" id="cpassword">
-		</label>
-		<!- this div is so we can check for matching password entries ->
-		<div id = "passwordCheck"> </div>
-		<br />
+          <label class="input-label">Enter your last name:</label>
+          <input type="text" id="lastName" placeholder="Last Name" class="input"><br />
 
-		<label>Enter first name:
-		    <input type="text" id="firstName">
-		</label>
-		<br /><br />
+          <label class="input-label">Enter a username:</label>
+          <input type="text" id="username" placeholder="Username" class="input"><br />
 
-		<label>Enter last name:
-		    <input type ="text" id="lastName">
-		</label>
-		<br /><br />
+          <label class="input-label">Enter a password:</label>
+          <input type="password" id="password" placeholder="Password" class="input"><br />
 
-		<label>Enter email:
-		    <input type ="text" id="email">
-		</label>
-		<!- can add div later to insert duplicate email error ->
-		<br /><br />
+          <label class="input-label">Confirm password:</label>
+          <input type="password" id="cpassword" placeholder="Password" class="input"><br />
+          <!- this div is so we can check for matching password entries ->
+          <div id="passwordCheck" class="input-label"> </div>
+          <br />
 
-		<input type="button" id="regButton" value="Register">
-	    </form>	
-	</body>
-
-</html>
+          <div type="button" class="btn" id="regButton" value="Register">Create Account</div>
+       </form>
+      
+      <form class="login-form" method="get" action='#'>
+          <label class="input-label">Enter your username:</label>
+          <input type="text" id="email" placeholder="Username" class="input"><br />
+          <label class="input-label">Enter your password:</label>
+          <input type="password" id="password" placeholder="Password" class="input"><br />
+          <div class="btn">Log In</div>
+          <span><a href="#">I forgot my username or password</a></span>
+       </form>
+      
+    </div>
+  </div>
+  </html>
