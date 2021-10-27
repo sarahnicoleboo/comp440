@@ -32,12 +32,10 @@
 	$newLastName = $_POST["lastName"];
 	$newEmail = $_POST["email"];
 
-	//$insertQ = "INSERT INTO user (username, password, firstName, lastName, email) VALUES (?), (?), (?), (?), (?)";
-	$insertQ = "INSERT INTO user (username) VALUES (?)";
+	$insertQ = "INSERT INTO user (username, password, firstName, lastName, email) VALUES (?, ?, ?, ?, ?)";
 
 	$stmt = $db->prepare($insertQ);
-	//$stmt->bind_param("sssss", $newUsername, $newPassword, $newFirstName, $newLastName, $newEmail);
-	$stmt->bind_param("s", $newUsername);
+	$stmt->bind_param("sssss", $newUsername, $newPassword, $newFirstName, $newLastName, $newEmail);
 	$stmt->execute();
 	?>
 	</body>
