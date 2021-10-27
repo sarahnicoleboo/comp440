@@ -39,7 +39,7 @@
           }
           else
           {
-              passwordCheck.innerHTML = "password entries should match";
+              passwordCheck.innerHTML = "<span style='color: red;'>ERROR: password entries should match</span>";
           }
         }
         //init function
@@ -94,7 +94,7 @@
           <div id="passwordCheck"> </div>
           <br />
 
-          <input type="submit" name="submit" id="regButton" value="Create Account">
+          <input type="submit" name="submit" class="btn" id="regButton" value="Create Account">
        </form>
 
       
@@ -105,7 +105,7 @@
           <label class="input-label">Enter your password:</label>
           <input type="password" id="lpassword" name="lpassword" placeholder="Password" class="input" required><br />
 
-          <input type="submit" name="submit" id="loginButton" value="Log In">
+          <input type="submit" name="submit" class="btn" id="loginButton" value="Log In">
 
           <span><a href="#">I forgot my username or password</a></span>
        </form>
