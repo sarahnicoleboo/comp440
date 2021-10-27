@@ -57,7 +57,7 @@
           regButton.addEventListener("click", regButtonClicked);
         }
   
-        window.addEventListener("load", init);
+        window.addEventListener("DOMContentLoaded", init);
         
       
     </script>
@@ -118,17 +118,17 @@
           <label class="input-label">Confirm password:</label>
           <input type="password" id="cpassword" placeholder="Password" class="input"><br />
           <!- this div is so we can check for matching password entries ->
-          <div id="passwordCheck" class="input-label"> </div>
+          <div id="passwordCheck"> </div>
           <br />
 
-          <div type="button" class="btn" id="regButton" value="Register">Create Account</div>
+          <input type="button" class="btn" id="regButton" value="Create Account">
        </form>
       
       <form class="login-form" method="get" action='#'>
           <label class="input-label">Enter your username:</label>
-          <input type="text" id="email" placeholder="Username" class="input"><br />
+          <input type="text" id="lusername" placeholder="Username" class="input"><br />
           <label class="input-label">Enter your password:</label>
-          <input type="password" id="password" placeholder="Password" class="input"><br />
+          <input type="password" id="lpassword" placeholder="Password" class="input"><br />
           <div class="btn">Log In</div>
           <span><a href="#">I forgot my username or password</a></span>
        </form>
