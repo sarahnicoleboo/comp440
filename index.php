@@ -45,6 +45,7 @@
         function init()
         {
           //variables
+	  //signup variables
           username = document.getElementById("username");
           password = document.getElementById("password");
           cpassword = document.getElementById("cpassword");
@@ -89,9 +90,8 @@
         print "<p>Connection succeeded</p>";
         //  var_dump($db);
               error_log("Hi I am an error and db username is " . $dbuser . "\r\n");     
-        }
+    }
 
-          //here is where i need to get the input from html and put it into the database.
     ?>
 
     <div class="container">
@@ -99,21 +99,21 @@
       <div class="login">Log In</div>
       <div class="signup">Sign Up</div>
       
-       <form class="signup-form" method="post" action='#'>
+       <form class="signup-form" method="post" action="registration.php">
           <label class="input-label">Enter an email address:</label>
-          <input type="text" id="email" placeholder="Email Address" class="input"><br />
+          <input type="text" id="email" name="email" placeholder="Email Address" class="input"><br />
 
           <label class="input-label">Enter your first name:</label>
-          <input type="text" id="firstName" placeholder="First Name" class="input"><br />
+          <input type="text" id="firstName" name="firstName" placeholder="First Name" class="input"><br />
 
           <label class="input-label">Enter your last name:</label>
-          <input type="text" id="lastName" placeholder="Last Name" class="input"><br />
+          <input type="text" id="lastName" name="lastName" placeholder="Last Name" class="input"><br />
 
           <label class="input-label">Enter a username:</label>
-          <input type="text" id="username" placeholder="Username" class="input"><br />
+          <input type="text" id="username" name="username" placeholder="Username" class="input"><br />
 
           <label class="input-label">Enter a password:</label>
-          <input type="password" id="password" placeholder="Password" class="input"><br />
+          <input type="password" id="password" name="password" placeholder="Password" class="input"><br />
 
           <label class="input-label">Confirm password:</label>
           <input type="password" id="cpassword" placeholder="Password" class="input"><br />
@@ -121,15 +121,16 @@
           <div id="passwordCheck"> </div>
           <br />
 
-          <input type="button" class="btn" id="regButton" value="Create Account">
+          <input type="submit" name="submit" id="regButton" value="Create Account">
        </form>
+
       
       <form class="login-form" method="get" action='#'>
           <label class="input-label">Enter your username:</label>
           <input type="text" id="lusername" placeholder="Username" class="input"><br />
           <label class="input-label">Enter your password:</label>
           <input type="password" id="lpassword" placeholder="Password" class="input"><br />
-          <div class="btn">Log In</div>
+          <input type="button" class="btn" id="loginButton" value="Log In">
           <span><a href="#">I forgot my username or password</a></span>
        </form>
       

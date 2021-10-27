@@ -82,6 +82,20 @@ body{
   margin-bottom: 15px;
 }
 
+input[type=submit] {
+  width: 100%;
+  background: #a53cde;
+  height: 60px;
+  text-align: center;
+  line-height: 60px;
+  text-transform: uppercase;
+  color: #fff;
+  font-weight: bold;
+  letter-spacing: 1px;
+  cursor: pointer;
+  margin-bottom: 15px;
+}
+
 span a{
   text-decoration: underline;
   color: #644475;
