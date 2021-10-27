@@ -26,17 +26,29 @@
               error_log("Hi I am an error and db username is " . $dbuser . "\r\n");     
     	}
 
-	$newUsername = $_POST["username"];
-	$newPassword = $_POST["password"];
-	$newFirstName = $_POST["firstName"];
-	$newLastName = $_POST["lastName"];
-	$newEmail = $_POST["email"];
+	//var_dump($_POST);
+	$newLusername = $_POST["lusername"];
+	$newLpassword = $_POST["lpassword"];
 
-	$insertQ = "INSERT INTO user (username, password, firstName, lastName, email) VALUES (?, ?, ?, ?, ?)";
+	$query = "SELECT username, password FROM user;";
+	$result = mysqli_query($db, $query);
 
-	$stmt = $db->prepare($insertQ);
-	$stmt->bind_param("sssss", $newUsername, $newPassword, $newFirstName, $newLastName, $newEmail);
-	$stmt->execute();
+	$successCheck = false;
+
+	while ($row = mysqli_fetch_row($result))
+	{
+	if($row[0] == $newLusername AND $row[1] == $newLpassword)
+	{
+	    print("You have logged in successfully");
+	    $successCheck = true;
+	}
+	}
+	
+	if($successCheck == false)
+	{
+	    print("Invalid login information");
+	}
+	
 	?>
 	</body>
 </html>

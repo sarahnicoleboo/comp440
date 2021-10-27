@@ -102,12 +102,12 @@
        </form>
 
       
-      <form class="login-form" method="get" action='#'>
+      <form class="login-form" method="post" action="login.php">
           <label class="input-label">Enter your username:</label>
-          <input type="text" id="lusername" placeholder="Username" class="input"><br />
+          <input type="text" id="lusername" name="lusername" placeholder="Username" class="input"><br />
           <label class="input-label">Enter your password:</label>
-          <input type="password" id="lpassword" placeholder="Password" class="input"><br />
-          <input type="button" class="btn" id="loginButton" value="Log In">
+          <input type="password" id="lpassword" name="lpassword" placeholder="Password" class="input"><br />
+          <input type="submit" name="submit" id="loginButton" value="Log In">
           <span><a href="#">I forgot my username or password</a></span>
        </form>
       
