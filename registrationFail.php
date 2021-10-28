@@ -6,9 +6,13 @@
     <link rel="stylesheet" href="styles.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script>
+      //$(document).ready(function(){
+        //$(".signup-form").hide();
+        //$(".signup").css("background","none");
+
       $(document).ready(function(){
-        $(".signup-form").hide();
-        $(".signup").css("background","none");
+	$(".login-form").hide();
+	$(".login").css("background","none");
 
         $(".login").click(function(){
           $(".signup-form").hide();
@@ -42,6 +46,17 @@
               passwordCheck.innerHTML = "<span style='color: red;'>ERROR: password entries should match</span>";
           }
         }
+
+	function usernameError()
+	{
+	   usernameCheck.innerHTML = "<span style='color: red;'>ERROR: username already taken</span>";
+	}
+
+	function emailError()
+	{
+	   emailCheck.innerHTML = "<span style='color: red;'>ERROR: email already registered</span>";
+	}
+
         //init function
         function init()
         {
@@ -52,14 +67,15 @@
 	  //event listeners
 	  password.addEventListener("input", function (event) { checkPassword(); });
 	  cpassword.addEventListener("input", function (event) { checkPassword(); });
+
         }
   
         window.addEventListener("DOMContentLoaded", init);
         
-      
     </script>
   </head>
   <body>
+
   <div class="wrapper">
     <div class="header">
       <label class="header-title">Database Design</label>
@@ -74,6 +90,7 @@
       
        <form class="signup-form" method="post" action="registration.php">
           <label class="input-label">Enter an email address:</label>
+	  <div id="emailCheck"> </div>
           <input type="text" id="email" name="email" placeholder="Email Address" class="input" required><br />
 
           <label class="input-label">Enter your first name:</label>
@@ -83,15 +100,17 @@
           <input type="text" id="lastName" name="lastName" placeholder="Last Name" class="input" required><br />
 
           <label class="input-label">Enter a username:</label>
-          <input type="text" id="username" name="username" placeholder="Username" class="input" required><br />
+	  <div id="usernameCheck"> </div>
+          <input type="text" id="username" name="username" placeholder="Username" class="input" required>
+	 
 
           <label class="input-label">Enter a password:</label>
           <input type="password" id="password" name="password" placeholder="Password" class="input" required><br />
 
           <label class="input-label">Confirm password:</label>
-          <input type="password" id="cpassword" placeholder="Password" class="input" required><br />
-          <!- this div is so we can check for matching password entries ->
           <div id="passwordCheck"> </div>
+          <input type="password" id="cpassword" placeholder="Password" class="input" required>
+          <!- this div is so we can check for matching password entries ->
           <br />
 
           <input type="submit" name="submit" id="regButton" value="Create Account">
@@ -114,4 +133,21 @@
       
     </div>
   </div>
+
+  <?php
+
+     if(isset($_GET["flag1"]))
+     {
+	echo '<script type="text/javascript">',
+	     'usernameError();',
+	     '</script>';
+     }
+     if(isset($_GET["flag2"]))
+     {
+         echo '<script type="text/javascript">',
+	     'emailError();',
+	     '</script>';
+     }
+
+  ?>
   </html>

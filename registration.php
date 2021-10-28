@@ -32,6 +32,30 @@
 	$newLastName = $_POST["lastName"];
 	$newEmail = $_POST["email"];
 
+	//here i'm gonna check for duplicate username and email
+	$query = "SELECT username, email FROM user;";
+	$result = mysqli_query($db, $query);
+
+	while ($row = mysqli_fetch_row($result))
+	{
+	
+	    if($row[0] == $newUsername AND $row[1] == $newEmail)
+	    {
+	        header("Location: /registrationFail.php?flag1=true?flag2=true");
+	    }
+
+	    if($row[0] == $newUsername) //if the username is already in the database
+	    {
+		header("Location: /registrationFail.php?flag1=true");
+	    }
+
+	    if($row[1] == $newEmail) //if the email is already in the database
+	    {
+	        header("Location: /registrationFail.php?flag2=true");
+	    }
+
+	}
+
 	$insertQ = "INSERT INTO user (username, password, firstName, lastName, email) VALUES (?, ?, ?, ?, ?)";
 
 	$stmt = $db->prepare($insertQ);
