@@ -7,7 +7,7 @@
 	<?php
 
     	$dbuser = "comp440";
-   	 $dbpass = "pass1234";
+   	$dbpass = "pass1234";
 
     	$db = mysqli_connect("127.0.0.1", $dbuser, $dbpass, "comp440project");
 
@@ -38,12 +38,6 @@
 
 	while ($row = mysqli_fetch_row($result))
 	{
-	
-	    if($row[0] == $newUsername AND $row[1] == $newEmail)
-	    {
-	        header("Location: /registrationFail.php?flag1=true?flag2=true");
-	    }
-
 	    if($row[0] == $newUsername) //if the username is already in the database
 	    {
 		header("Location: /registrationFail.php?flag1=true");
@@ -62,5 +56,7 @@
 	$stmt->bind_param("sssss", $newUsername, $newPassword, $newFirstName, $newLastName, $newEmail);
 	$stmt->execute();
 	?>
+
+	<p>Registration successful</p>
 	</body>
 </html>
