@@ -54,6 +54,7 @@
 	{
 	    print("You have logged in successfully");
 	    $successCheck = true;
+	    header("Location: /home.php");
 	}
 	}
 	
