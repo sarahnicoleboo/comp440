@@ -61,6 +61,7 @@
 	if($successCheck == false)
 	{
 	    print("Invalid login information");
+	    header("Location: /loginFail.html");
 	}
 	
 	?>
