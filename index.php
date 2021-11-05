@@ -29,12 +29,6 @@
         });
       });
 
-
-	function iButtonClicked()
-	{
-	    window.location.href="initDB.php";
-	}
-
         function checkPassword()
         {
 	  passwordCheck.innerHTML = "";
@@ -62,7 +56,6 @@
 	  //event listeners
 	  password.addEventListener("input", function (event) { checkPassword(); });
 	  cpassword.addEventListener("input", function (event) { checkPassword(); });
-	  initButton.addEventListener("click", iButtonClicked);
         }
   
         window.addEventListener("DOMContentLoaded", init);
@@ -122,10 +115,6 @@
 
           <span><a href="#">I forgot my username or password</a></span>
        </form>
-
-
-    <input type="button" id="initButton" value="Initialize DB">
-      
     </div>
   </div>
   </html>

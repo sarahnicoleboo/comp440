@@ -1,7 +1,20 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>idk</title>
+	    <title>Login</title>
+	    <script>
+		function iButtonClicked()
+		{
+	    	    window.location.href="initDB.php";
+		}
+
+	        function init()	
+		{
+		    initButton.addEventListener("click", iButtonClicked);
+		}
+
+        	window.addEventListener("DOMContentLoaded", init);
+	    </script>
 	</head>
 	<body>
 	<?php
@@ -50,5 +63,8 @@
 	}
 	
 	?>
+
+	<br />
+    	<input type="button" id="initButton" value="Initialize DB">
 	</body>
 </html>
