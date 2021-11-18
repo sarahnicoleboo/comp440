@@ -33,7 +33,7 @@
 	$newEmail = $_POST["email"];
 
 	//here i'm gonna check for duplicate username and email
-	$query = "SELECT username, email FROM user;";
+	$query = "SELECT username, email FROM users;";
 	$result = mysqli_query($db, $query);
 	$failCheck = false;
 
@@ -54,13 +54,13 @@
 	}
 
 	if($failCheck==false){
-		$insertQ = "INSERT INTO user (username, password, firstName, lastName, email) VALUES (?, ?, ?, ?, ?)";
+		$insertQ = "INSERT INTO users (username, password, firstName, lastName, email) VALUES (?, ?, ?, ?, ?)";
 
 		$stmt = $db->prepare($insertQ);
 		$stmt->bind_param("sssss", $newUsername, $newPassword, $newFirstName, $newLastName, $newEmail);
 		$stmt->execute();
 
-		header("Location: /home.php");
+		header("Location: /home.html");
 	}
 
 	?>

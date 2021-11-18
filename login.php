@@ -43,7 +43,7 @@
 	$newLusername = $_POST["lusername"];
 	$newLpassword = $_POST["lpassword"];
 
-	$query = "SELECT username, password FROM user;";
+	$query = "SELECT username, password FROM users;";
 	$result = mysqli_query($db, $query);
 
 	$successCheck = false;
@@ -54,7 +54,7 @@
 	{
 	    print("You have logged in successfully");
 	    $successCheck = true;
-	    header("Location: /home.php");
+	    header("Location: /home.html");
 	}
 	}
 	

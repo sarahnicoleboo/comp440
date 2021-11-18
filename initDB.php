@@ -29,7 +29,8 @@
     # MySQL with PDO_MYSQL  
     $db = new PDO("mysql:host=$mysql_host;dbname=$mysql_database", $mysql_user, $mysql_password);
 
-    $query = file_get_contents("university-1.sql");
+    //$query = file_get_contents("university-1.sql");
+    $query = file_get_contents("ProjDB.sql");
 
     $stmt = $db->prepare($query);
 
