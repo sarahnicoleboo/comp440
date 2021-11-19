@@ -60,7 +60,7 @@
 		$stmt->bind_param("sssss", $newUsername, $newPassword, $newFirstName, $newLastName, $newEmail);
 		$stmt->execute();
 
-		header("Location: /home.html");
+		header("Location: /home.php");
 	}
 
 	?>

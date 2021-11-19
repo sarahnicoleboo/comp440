@@ -31,6 +31,12 @@
     </script>
   </head>
   <body>
+     <?php
+        session_start();
+	//if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
+	  // echo $_SESSION['username'];
+	//}
+     ?>
   <div class="wrapper">
     <div class="header">
       <label class="header-title">Database Design</label>

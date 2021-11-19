@@ -54,7 +54,10 @@
 	{
 	    print("You have logged in successfully");
 	    $successCheck = true;
-	    header("Location: /home.html");
+	    session_start();
+	    $_SESSION['loggedin'] = true;
+	    $_SESSION['username'] = $newLusername;
+	    header("Location: /home.php");
 	}
 	}
 	

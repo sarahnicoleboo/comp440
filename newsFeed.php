@@ -5,6 +5,19 @@
         <title>Database Design</title>
         <link rel="stylesheet" href="styles.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script>
+	   function postButtonClicked()
+	   {
+	      window.location.href="postBlog.php";
+	   }
+
+	   function init()
+	   {
+	      postButton.addEventListener("click", postButtonClicked);
+	   }
+
+	   window.addEventListener("DOMContentLoaded", init);
+	</script>
      </head>
      <body>
 
