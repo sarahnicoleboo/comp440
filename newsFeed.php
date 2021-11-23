@@ -42,15 +42,18 @@
            error_log("Hi I am an error and db username is " . $dbuser . "\r\n");     
     	   }
 
+	   session_start();
+
 	   $query = "SELECT subject, created_by, pdate, description FROM blogs ORDER BY pdate DESC;";
 	   $result = mysqli_query($db, $query);
 	?>
 
         <div class="wrapper">
 	<div class="container">
+	    <p>Welcome <?php echo $_SESSION['username']; ?></p>
 	    <input type="button" class="btn" id="postButton" value="Post a blog">
 	    <br /><br />
-	    <p> Welcome to your News Feed! </p>
+	    <p> Blogs news feed </p>
 	</div>
 	<?php
 	   while($rows=$result->fetch_assoc())

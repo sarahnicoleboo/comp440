@@ -8,5 +8,6 @@
    $subject = $_POST['subject'];
    $description = $_POST['description'];
 
-   $query = mysqli_query($db, "CALL Insert_Blog_Procedure($subject, $description, $username);");
+   $query = mysqli_query($db, "CALL Insert_Blog_Procedure('$subject', '$description', '$username');");
+   header("Location: /newsFeed.php");
 ?>
