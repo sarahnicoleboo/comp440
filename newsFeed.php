@@ -64,6 +64,8 @@
 	<div>Created By: <?php echo $rows['created_by'];?></div>
 	<div>Posted On: <?php echo $rows['pdate'];?></div>
 	<div><?php echo $rows['description'];?></div>
+       
+
 	<br />
 	<input type="button" class="btn" id="commentButton" value="Leave a comment">
 	</div>

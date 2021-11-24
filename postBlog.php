@@ -19,6 +19,9 @@
 	         <label class="input-label">Enter a blog description:</label>
 		 <input type="text" id="description" name="description" placeholder="Description" required><br />
 
+	         <label class="input-label">Enter blog tags:</label>
+		 <input type="text" id="tags" name="tags" placeholder="tag1,tag2,..."><br />
+
 		 <input type="submit" name="submit" id="postButton" value="Post">
 	      </form>
 	   </div>
