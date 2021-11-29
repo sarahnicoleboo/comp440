@@ -18,8 +18,9 @@
    $blogid = $_POST['theID'];
    $poster = $_POST['user'];
    if ($username <> $poster) {
-      $query = mysqli_query($db, "CALL Insert_Comment_Procedure('$sentiment', '$description', '$blogid', '$username');");
+      $query = mysqli_query($db, "CALL Insert_Comment_Procedure('$sentiment', '$description', '$blogid', '$username');");   
    }
+   header("Location: /viewBlog.php");  
 ?>
 </body>
 </html>

@@ -62,6 +62,7 @@
 	<div class="container">
       	    <form method="get" action="viewBlog.php">
  	        <input type ="hidden" name = "blogid" value="<?php echo $rows['blogid']; ?>">
+		<?php $_SESSION['blogid'] = $rows['blogid']; ?>
 		<input type="submit" value="<?php echo $rows['subject'];?>">
 	    </form>
 	</div>
