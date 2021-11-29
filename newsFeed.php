@@ -44,7 +44,7 @@
 
 	   session_start();
 
-	   $query = "SELECT subject, created_by, pdate, description FROM blogs ORDER BY pdate DESC;";
+	   $query = "SELECT blogid, subject FROM blogs ORDER BY pdate DESC;";
 	   $result = mysqli_query($db, $query);
 	?>
 
@@ -60,14 +60,10 @@
 	   {
 	?>
 	<div class="container">
-	<div>Blog: <?php echo $rows['subject'];?></div>
-	<div>Created By: <?php echo $rows['created_by'];?></div>
-	<div>Posted On: <?php echo $rows['pdate'];?></div>
-	<div><?php echo $rows['description'];?></div>
-       
-
-	<br />
-	<input type="button" class="btn" id="commentButton" value="Leave a comment">
+      	    <form method="get" action="viewBlog.php">
+ 	        <input type ="hidden" name = "blogid" value="<?php echo $rows['blogid']; ?>">
+		<input type="submit" value="<?php echo $rows['subject'];?>">
+	    </form>
 	</div>
         </div>
 	<?php
