@@ -59,6 +59,9 @@
 		$stmt = $db->prepare($insertQ);
 		$stmt->bind_param("sssss", $newUsername, $newPassword, $newFirstName, $newLastName, $newEmail);
 		$stmt->execute();
+	        session_start();
+	        $_SESSION['loggedin'] = true;
+	        $_SESSION['username'] = $newUsername;
 
 		header("Location: /home.php");
 	}
