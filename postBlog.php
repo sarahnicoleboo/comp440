@@ -10,20 +10,23 @@
 	<?php
 	   session_start();
 	?>
-        <div class="wrapper">
+      <div class="wrapper">
 	   <div class="container">
+	   	<div class="newslist">
 	      <form method="post" action="insertBlog.php">
+	      	<label id="welcome-sign">New Blog Post</label>
 	         <label class="input-label">Enter a blog subject:</label>
-		 <input type="text" id="subject" name="subject" placeholder="Subject" required><br />
+		 <input type="text" id="subject" class="input" name="subject" placeholder="Subject" required><br />
 
 	         <label class="input-label">Enter a blog description:</label>
-		 <input type="text" id="description" name="description" placeholder="Description" required><br />
+		 <input type="text" id="description" class="input" name="description" placeholder="Description" required><br />
 
 	         <label class="input-label">Enter blog tags:</label>
-		 <input type="text" id="tags" name="tags" placeholder="tag1,tag2,..."><br />
+		 <input type="text" id="tags" class="input" name="tags" placeholder="tag1,tag2,..."><br />
 
 		 <input type="submit" name="submit" id="postButton" value="Post">
 	      </form>
+	   </div>
 	   </div>
 	</div>
      </body>

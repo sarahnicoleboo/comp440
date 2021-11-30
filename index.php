@@ -104,7 +104,6 @@
 
       
       <form class="login-form" method="post" action="login.php">
-	     <p style='color: red;'>Invalid Login</p>
           <label class="input-label">Enter your username:</label>
           <input type="text" id="lusername" name="lusername" placeholder="Username" class="input" required><br />
 

@@ -48,7 +48,7 @@
       <div class="home-style">
         <label id="welcome-sign">Welcome to the Home Page!</label>
         <input type="button" class="btn" id="initButton" value="Initialize DB">
-	<input type="button" class="btn" id="nfButton" value="View Blogs">
+	      <input type="button" class="btn" id="nfButton" value="View Blogs">
         <input type="button" class="btn" id="returnButton" value="Sign Out">
       </div>
     </div>

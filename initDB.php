@@ -10,10 +10,16 @@
     {
             window.location.href="initDB.php";
     }
+    function returnToHomePage()
+    {
+        window.location.href="home.php";
+    }
 
           function init() 
     {
         initButton.addEventListener("click", iButtonClicked);
+        returnHomepageButton.addEventListener("click", returnToHomePage);
+
     }
 
           window.addEventListener("DOMContentLoaded", init);
@@ -54,6 +60,7 @@
         <label id="welcome-sign">Welcome to the Home Page!</label>
 	<div style='color: purple;'> Success </div>
         <input type="button" class="btn" id="initButton" value="Initialize DB">
+        <input type="button" class="btn" id="returnHomepageButton" value="Return to HomePage">
       </div>
     </div>
     
