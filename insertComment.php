@@ -22,9 +22,14 @@
    }
    //header("Location: /viewBlog.php");
 ?>
+<div class="container">
+<div class="newslist">
+   <p class="header-sub">Congrats, your comment posted!</p>
 <form method="get" action="viewBlog.php">
 <input type="hidden" name="blogid" value="<?php echo $blogid; ?>">
 <input type="submit" value="Return to viewing blog">
 </form>
+</div>
+</div>
 </body>
 </html>
