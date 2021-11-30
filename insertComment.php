@@ -22,5 +22,9 @@
    }
    //header("Location: /viewBlog.php");
 ?>
+<form method="get" action="viewBlog.php">
+<input type="hidden" name="blogid" value="<?php echo $blogid; ?>">
+<input type="submit" value="Return to viewing blog">
+</form>
 </body>
 </html>
