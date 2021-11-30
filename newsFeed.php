@@ -10,10 +10,15 @@
 	   {
 	      window.location.href="postBlog.php";
 	   }
+	   function returnToHomePage()
+	    {
+	        window.location.href="home.php";
+	    }
 
 	   function init()
 	   {
 	      postButton.addEventListener("click", postButtonClicked);
+	      returnHomepageButton.addEventListener("click", returnToHomePage);
 	   }
 
 	   window.addEventListener("DOMContentLoaded", init);
@@ -48,27 +53,39 @@
 	   $result = mysqli_query($db, $query);
 	?>
 
-        <div class="wrapper">
+   <div class="wrapper">
+   	<div class="header">
+	      <label class="header-title">Database Design</label>
+	      <br />
+	      <label class="header-sub">By: Sarah & Ale</label>
+    	</div>
+
 	<div class="container">
-	    <p>Welcome <?php echo $_SESSION['username']; ?></p>
-	    <input type="button" class="btn" id="postButton" value="Post a blog">
-	    <br /><br />
-	    <p> Blogs news feed </p>
+		<div class="newslist">
+	    <p class="header-sub">Hello <?php echo $_SESSION['username']; ?>!</p>
+	    <input type="button" class="btn" id="postButton" value="Create a Blog Post">
+	    <input type="button" class="btn" id="returnHomepageButton" value="Return to HomePage">
+	    <br />
 	</div>
-	<?php
-	   while($rows=$result->fetch_assoc())
-	   {
-	?>
+	</div>
+
 	<div class="container">
-      	    <form method="get" action="viewBlog.php">
- 	        <input type ="hidden" name = "blogid" value="<?php echo $rows['blogid']; ?>">
-		<?php $_SESSION['blogid'] = $rows['blogid']; ?>
-		<input type="submit" value="<?php echo $rows['subject'];?>">
-	    </form>
+		<div class="newslist">
+			<p class="header-sub">News Feed</p>
+			<?php
+			   while($rows=$result->fetch_assoc())
+			   {
+			?>
+      	<form method="get" action="viewBlog.php">
+	 	      <input type ="hidden" name = "blogid" value="<?php echo $rows['blogid']; ?>">
+				<input type="submit" value="<?php echo $rows['subject'];?>">
+	    	</form>
+	
+			<?php
+			   }
+			?>
+		</div>
 	</div>
-        </div>
-	<?php
-	   }
-	?>
-     </body>
+   </div>
+   </body>
 </html>

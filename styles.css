@@ -3,6 +3,7 @@
   margin: 0;
   padding: 0;
   user-select: none;
+  box-sizing: border-box;
 }
 
 body{
@@ -21,10 +22,30 @@ body{
 .header-sub{
   text-align: center;
   font-size: 20px;
+  padding-bottom: 20px;
 }
+
+.blog-title{
+  text-align: center;
+  font-size: 25px;
+  padding-bottom: 20px;
+}
+.blog-sub{
+  text-align: center;
+  font-size: 20px;
+  padding-bottom: 20px;
+}
+
+.blog-content{
+  text-align: center;
+  font-size: 20px;
+  padding: 20px;
+  background: #e9eaea;
+}
+
 #welcome-sign{
   text-align: center;
-  font-size: 35px;
+  font-size: 25px;
   padding-bottom: 20px;
   display: block; 
 }
@@ -60,9 +81,11 @@ body{
   background: #ffffff;
   padding: 40px;
   width: 100%;
+  clear: both;
   box-sizing: border-box;
-  height: 500px;
+  height: auto;
   display:  block;
+  
 }
 
 .input-label{
@@ -116,6 +139,14 @@ input[type=submit] {
 span a{
   text-decoration: underline;
   color: #644475;
+}
+
+.newslist{
+  background: #fff;
+  padding: 40px;
+  width: 100%;
+  box-sizing: border-box;
+  height: auto;
 }
 
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
