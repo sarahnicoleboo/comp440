@@ -1,6 +1,11 @@
 # COMP440
 Project for COMP 440 Database Design
 
+Fall 2021
+
+Sarah Canto
+Alejandra Soto
+
 Link to YouTube videos:
 
 Phase 1 --> https://www.youtube.com/watch?v=ElI5l5uu3NA
