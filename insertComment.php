@@ -20,7 +20,7 @@
    if ($username <> $poster) {
       $query = mysqli_query($db, "CALL Insert_Comment_Procedure('$sentiment', '$description', '$blogid', '$username');");
    }
-   header("Location: /viewBlog.php");
+   //header("Location: /viewBlog.php");
 ?>
 </body>
 </html>

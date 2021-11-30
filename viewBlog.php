@@ -16,7 +16,9 @@
    $db = mysqli_connect("127.0.0.1", $dbuser, $dbpass, "comp440project");
    session_start();
    $username = $_SESSION['username'];
+   //$id = $_SESSION['blogid'];
    $id = $_GET['blogid'];
+
    $query = "SELECT * FROM blogs WHERE blogid = '$id';";
    $result = mysqli_query($db, $query);
 
@@ -41,6 +43,21 @@
    }
 ?>
 </div>
+<br /> <br />
+<?php
+$query = "SELECT sentiment, description, cdate, posted_by FROM comments WHERE blogid = '$id';";
+$result = mysqli_query($db, $query);
+?> <p>Comments:</p> <?php
+while($rows=$result->fetch_assoc())
+{ ?>
+   <div><?php echo $rows['posted_by'];?></div>
+   <div><?php echo $rows['cdate'];?></div>
+   <div><?php echo $rows['sentiment'];?></div>
+   <div><?php echo $rows['description'];?></div>
+   <br />
+<?php
+} 
+?>
 <br /> <br />
 <div class="newslist">
 <div class="blog-sub">Leave a comment:</div>
