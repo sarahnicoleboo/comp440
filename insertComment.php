@@ -24,7 +24,7 @@
 ?>
 <div class="container">
 <div class="newslist">
-   <p class="header-sub">Congrats, your comment posted!</p>
+   <p class="header-sub">Congrats, you attempted to comment!</p>
 <form method="get" action="viewBlog.php">
 <input type="hidden" name="blogid" value="<?php echo $blogid; ?>">
 <input type="submit" value="Return to viewing blog">

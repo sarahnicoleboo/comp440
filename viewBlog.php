@@ -41,6 +41,7 @@
       <div><?php echo $rows['tag'];?></div>
    <?php
    }
+
 ?>
 </div>
 <br /> <br />
@@ -80,7 +81,14 @@ while($rows=$result->fetch_assoc())
 </form>
 
 </div>
+
+<br /> <br />
+<div class="newslist">
+   <form method="post" action="newsFeed.php">
+   <input type="submit" class="btn" id="returnNewsfeedButton" value="Return to Newsfeed">
+</form>
 </div>
+
 </div>
 </body>
 </html>
