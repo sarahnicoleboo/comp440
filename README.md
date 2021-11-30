@@ -4,6 +4,7 @@ Project for COMP 440 Database Design
 Fall 2021
 
 Sarah Canto
+&
 Alejandra Soto
 
 Link to YouTube videos:
