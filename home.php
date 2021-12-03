@@ -20,11 +20,17 @@
 	    window.location.href="newsFeed.php";
 	}
 
+	function goToQueries()
+	{
+	    window.location.href="queries.php";
+	}
+
           function init() 
     {
         initButton.addEventListener("click", iButtonClicked);
 	returnButton.addEventListener("click", returnToHome);
 	nfButton.addEventListener("click", goToNewsFeed);
+	queryButton.addEventListener("click", goToQueries);
     }
 
           window.addEventListener("DOMContentLoaded", init);
@@ -50,6 +56,7 @@
         <input type="button" class="btn" id="initButton" value="Initialize DB">
 	      <input type="button" class="btn" id="nfButton" value="View Blogs">
         <input type="button" class="btn" id="returnButton" value="Sign Out">
+	<input type="button" class="btn" id="queryButton" value="Phase 3 Queries">
       </div>
     </div>
     
