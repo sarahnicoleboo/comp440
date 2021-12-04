@@ -22,18 +22,22 @@
 	      <p>2. List the user who posted the most number of blogs on 10/10/2021; if there is a tie,
 		list all the users who have a tie.</p>
 	   </div>
-	      <input type="button" class="btn" id="submit2" value="Submit query">
+	      	<form method="post" action="query2.php">
+		<label class="input-label">Enter the date:</label>
+		<input type="text" id="date2" name="date2" placeholder="2021-10-10" class="input">
+	        <input type="submit" id="submit2" value="Submit query">
+	      </form>
 	   <br /><br />
            <div>
 	      <p>3. List the users who are followed by both X and Y. Usernames X and Y are inputs
 		from the user.</p>
 	   </div>
-	      <form method="get" action="">
+	      <form method="post" action="query3.php">
 		<label class="input-label">Enter the username for X:</label>
-		<input type="text" id="username3X" placeholder="Username" class="input">
+		<input type="text" id="username3X" name="username3X" placeholder="Username" class="input">
 	        <label class="input-label">Enter the username for Y:</label>
-		<input type="text" id="username3Y" placeholder="Username" class="input">
-	        <input type="button" class="btn" id="submit3" value="Submit query">
+		<input type="text" id="username3Y" name="username3Y" placeholder="Username" class="input">
+	        <input type="submit" id="submit3" value="Submit query">
 	      </form>
         </div>
      </div>
