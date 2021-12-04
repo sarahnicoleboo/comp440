@@ -12,10 +12,10 @@
            <div>
 	      <p>1. List all the blogs of user X, such that all the comments are positive for these blogs.</p>
 	   </div>
-	      <form method="get' action="">
+	      <form method="post" action="query1.php">
 		<label class="input-label">Enter the username:</label>
-		<input type="text" id="username1" placeholder="Username" class="input">
-	        <input type="button" class="btn" id="submit1" value="Submit query">
+		<input type="text" id="username1" name="username1" placeholder="Username" class="input">
+	        <input type="submit" id="submit1" value="Submit query">
 	      </form>
            <br /><br />
            <div>
@@ -28,7 +28,7 @@
 	      <p>3. List the users who are followed by both X and Y. Usernames X and Y are inputs
 		from the user.</p>
 	   </div>
-	      <form method="get' action="">
+	      <form method="get" action="">
 		<label class="input-label">Enter the username for X:</label>
 		<input type="text" id="username3X" placeholder="Username" class="input">
 	        <label class="input-label">Enter the username for Y:</label>

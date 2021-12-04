@@ -22,7 +22,7 @@
 
 	function goToQueries()
 	{
-	    window.location.href="queries.php";
+	    window.location.href="queries.html";
 	}
 
           function init() 
