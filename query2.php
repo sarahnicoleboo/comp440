@@ -13,9 +13,9 @@
 	   $dbuser = "comp440";
            $dbpass = "pass1234";
            $db = mysqli_connect("127.0.0.1", $dbuser, $dbpass, "comp440project");
-	   $date = $_POST['date2'];
+	   //$date = $_POST['date2'];
 	   $query = "CREATE VIEW daView AS SELECT created_by, count(*) AS c FROM blogs 
-		WHERE pdate='$date'
+		WHERE pdate= .date();
 		GROUP BY created_by;";
 	   $result = mysqli_query($db, $query);
 	   $query1 = "SELECT created_by FROM daView WHERE c = (SELECT max(c) FROM daView);";
