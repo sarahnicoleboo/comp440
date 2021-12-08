@@ -14,13 +14,15 @@
            $dbpass = "pass1234";
            $db = mysqli_connect("127.0.0.1", $dbuser, $dbpass, "comp440project");
 	   //$date = $_POST['date2'];
+	   $dropQuery = "DROP VIEW daView;";
+	   $dropResult = mysqli_query($db, $dropQuery);
 	   $query = "CREATE VIEW daView AS SELECT created_by, count(*) AS c FROM blogs 
-		WHERE pdate= .date();
+		WHERE pdate= '2021-12-08'
 		GROUP BY created_by;";
 	   $result = mysqli_query($db, $query);
 	   $query1 = "SELECT created_by FROM daView WHERE c = (SELECT max(c) FROM daView);";
 	   $result1 = mysqli_query($db, $query1);
-	   ?><div>2. List the user who posted the most number of blogs on 10/10/2021; if there is a tie,
+	   ?><div>2. List the user who posted the most number of blogs today; if there is a tie,
 		list all the users who have a tie.</div> <?php
 	   while($row=$result1->fetch_assoc())
 	   { ?>
